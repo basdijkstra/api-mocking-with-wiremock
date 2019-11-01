@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "2d7cca6c-a227-4c39-a79e-b0d0c9ac43d9",
+		"name": "WireMockTests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Exercise301",
+			"item": [
+				{
+					"name": "FirstGETcall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b48e710a-20db-4ed5-ad4c-aafdf16cba4d",
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/nl/3825",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"nl",
+								"3825"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POSTcall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "41b6379e-52f8-4fbc-a38f-615141883189",
+								"exec": [
+									"pm.test(\"Status code is 201\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "DATA FOR /nl/3825"
+						},
+						"url": {
+							"raw": "http://localhost:9876/nl/3825",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"nl",
+								"3825"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SecondGETcall",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "b48e710a-20db-4ed5-ad4c-aafdf16cba4d",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Body is correct\", function () {",
+									"    pm.response.to.have.body(\"DATA FOR /nl/3825\");",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9876/nl/3825",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9876",
+							"path": [
+								"nl",
+								"3825"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Exercise101",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "189bb34a-f6ca-4e98-b85d-cc14be4e2ccb",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/pl/80-862",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"pl",
+						"80-862"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exercise102",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ef80217a-39fd-4e1a-9016-61f783583733",
+						"exec": [
+							"pm.test(\"Content-Type has correct value\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\", \"text/plain\");",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"Posted!\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/pl/80-863",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"pl",
+						"80-863"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exercise201",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf2e810a-40b9-4de9-8e96-e9fa9b79e115",
+						"exec": [
+							"pm.test(\"Status code is 503\", function () {",
+							"    pm.response.to.have.status(503);",
+							"});",
+							"",
+							"pm.test(\"Status message is present\", function () {",
+							"    pm.response.to.have.status(\"Service unavailable\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/servicedown",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"servicedown"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exercise202",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c5948feb-5251-4eb1-a84d-e30b8aa76fd3",
+						"exec": [
+							"pm.test(\"Response time is more than 3000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.above(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "speed",
+						"value": "slow",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:9876/slow",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"slow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exercise401",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "02c96d1d-e768-411c-8dcb-f8eb28d8550b",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"Listening on port 9876\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9876/echo-port",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"echo-port"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Exercise402",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2d500347-10b7-4f6f-b10b-ad6bbb9f2724",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"Giulia 2.9 V6 Quadrifoglio\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"car\": {\n        \"make\": \"Alfa Romeo\",\n        \"model\": \"Giulia 2.9 V6 Quadrifoglio\",\n        \"top_speed\": 307\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9876/echo-car-model",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9876",
+					"path": [
+						"echo-car-model"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
