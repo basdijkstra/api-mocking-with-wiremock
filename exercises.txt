@@ -1,0 +1,49 @@
+/************************************************
+* EXERCISE 201
+* Create a stub that will respond to all GET
+* requests to /servicedown
+* with HTTP status code 503 and a status message
+* equal to 'Service unavailable'
+************************************************/
+
+/************************************************
+* EXERCISE 202
+* Create a stub that will respond to a GET request
+* to /slow with request header 'speed' with value 'slow'.
+* Respond with status code 200, but only after a
+* fixed delay of 3000 milliseconds.
+************************************************/
+
+/************************************************
+* EXERCISE 301
+* Create a stub that exerts the following behavior:
+* - The scenario is called 'Stateful mock exercise'
+* - 1. A first GET to /nl/3825 returns HTTP 404
+* - 2. A POST to /nl/3825 with body 'DATA FOR /nl/3825' returns HTTP 201
+* 		and causes a transition to state 'DATA_CREATED'
+* - 3. A second GET (when in state 'DATA_CREATED ') to /nl/3825
+*      returns HTTP 200 and body "DATA FOR /nl/3825"
+************************************************/
+
+/************************************************
+* EXERCISE 401
+* Create a stub that listens at path
+* /echo-port
+* and responds to all GET requests with HTTP
+* status code 200 and a response body containing
+* the text "Listening on port <portnumber>"
+* where <portnumber> is replaced with the actual port
+* number (9876, in this case)
+* Don't forget to enable response templating!
+************************************************/
+
+/************************************************
+* EXERCISE 402
+* Create a stub that listens at path
+* /echo-car-model
+* and responds to all POST requests with HTTP
+* status code 200 and a response body containing
+* the value of the JSON element car.model extracted
+* from the request body
+* Don't forget to enable response templating!
+************************************************/
